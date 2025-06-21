@@ -4,16 +4,17 @@ from openpyxl import load_workbook
 from datetime import datetime
 import pandas as pd
 import pytz
+import os
 from apscheduler.schedulers.background import BackgroundScheduler
 
 # Ganti dengan token dari @BotFather
-TOKEN = '7460670696:AAFS07mZqW1LRBosFClq7YFVZ25yw8WO2sc'
+TOKEN = os.getenv("BOT_TOKEN")
 
 # Path file Excel (pastikan file-nya ada di folder ini)
 EXCEL_PATH = 'Template_Keuangan_TelegramBot.xlsx'
 
 # Ganti ini dengan chat_id kamu (lihat dari /start response)
-YOUR_CHAT_ID = 1438942377  # <-- GANTI dengan chat_id kamu
+YOUR_CHAT_ID = int(os.getenv("CHAT_ID"))  # <-- GANTI dengan chat_id kamu
 
 # Menyimpan status user sementara
 user_state = {}
